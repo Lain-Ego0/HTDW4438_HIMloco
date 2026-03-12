@@ -1322,7 +1322,7 @@ class LeggedRobot(BaseTask):
     def _reward_default_pos_linear(self):
         # 计算当前关节位置与默认位置的绝对差值 (L1 Norm)
         diff = torch.abs(self.dof_pos - self.default_dof_pos)
-        # 求和
+        # 求和并取负（作为惩罚项）
         return torch.sum(diff, dim=1)
 
     # 2. 线性高度奖励
@@ -1412,4 +1412,5 @@ class LeggedRobot(BaseTask):
         reward = torch.square(total_error * 10.0)  # 缩放因子可调整敏感度
         
         return reward
+
 
