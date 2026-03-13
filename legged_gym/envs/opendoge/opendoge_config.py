@@ -149,7 +149,7 @@ class OpendogeCfg(LeggedRobotCfg):
         class scales(LeggedRobotCfg.rewards.scales):
 
             termination = -0.0              # 终止条件惩罚
-            tracking_lin_vel = 1.0          # 追踪线速度奖励
+            tracking_lin_vel = 3.0          # 追踪线速度奖励
             tracking_ang_vel = 0.5          # 追踪角速度奖励
             lin_vel_z = -2.0                # 垂直速度惩罚（防止机器人向上跳）
             ang_vel_xy = -0.05              # 水平角速度惩罚（保持姿态稳定）
@@ -222,7 +222,7 @@ class OpendogeCfg(LeggedRobotCfg):
             bounce_threshold_velocity = 0.5 # 反弹阈值。如果撞击速度小于 0.5m/s，就不发生反弹（完全非弹性碰撞）
             max_depenetration_velocity = 1.0 # 最大去穿模速度。如果物体不幸穿模了（嵌进地里），引擎会把它推出来。这个参数限制推出来的最大速度。
             default_buffer_size_multiplier = 5
-            max_gpu_contact_pairs = 2**23 # 预分配显存缓冲区的大小
+            max_gpu_contact_pairs = 2**24 # Opendoge mesh contacts are dense; bump capacity to avoid dropped aggregate pairs
 
 # ==========================
 # 训练参数 (PPO Runner)

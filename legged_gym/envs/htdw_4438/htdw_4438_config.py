@@ -68,7 +68,7 @@ class Htdw4438Cfg(LeggedRobotCfg):
         control_type = 'P'          # 位置控制 (PD Controller)
         stiffness = {'joint': 10.0}   # PD参数保留
         damping = {'joint': 0.3}     
-        action_scale = 0.25          # 动作缩放：网络输出通常在 [-1, 1]，乘上 0.25 后变为目标关节弧度
+        action_scale = 0.25          # 动作缩放：网络输出通常在 [-1, 1]，乘上 0.25 后变为目标关节弧度 注意请和Deploy后的统一
         decimation = 2              # 控制频率设置 物理引擎 dt = 0.005 (200Hz) -> 控制频率 = 200 / 2 = 100Hz
 
     # ==========================

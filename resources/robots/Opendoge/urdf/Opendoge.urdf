@@ -99,8 +99,8 @@
     <limit
       lower="-0.785"
       upper="0.26"
-      effort="0"
-      velocity="0" />
+      effort="6"
+      velocity="10.472" />
   </joint>
   <link
     name="FL_thigh">
@@ -157,8 +157,8 @@
     <limit
       lower="-0.785"
       upper="0.785"
-      effort="0"
-      velocity="0" />
+      effort="6"
+      velocity="10.472" />
   </joint>
   <link
     name="FL_calf">
@@ -215,8 +215,8 @@
     <limit
       lower="-2.68"
       upper="-1.04"
-      effort="0"
-      velocity="0" />
+      effort="9"
+      velocity="6.981" />
   </joint>
   <link
     name="FL_foot">
@@ -326,8 +326,8 @@
     <limit
       lower="-0.26"
       upper="0.785"
-      effort="0"
-      velocity="0" />
+      effort="6"
+      velocity="10.472" />
   </joint>
   <link
     name="FR_thigh">
@@ -384,8 +384,8 @@
     <limit
       lower="-0.785"
       upper="0.785"
-      effort="0"
-      velocity="0" />
+      effort="6"
+      velocity="10.472" />
   </joint>
   <link
     name="FR_calf">
@@ -442,8 +442,8 @@
     <limit
       lower="-2.68"
       upper="-1.04"
-      effort="0"
-      velocity="0" />
+      effort="9"
+      velocity="6.981" />
   </joint>
   <link
     name="FR_foot">
@@ -553,8 +553,8 @@
     <limit
       lower="-0.785"
       upper="0.26"
-      effort="0"
-      velocity="0" />
+      effort="6"
+      velocity="10.472" />
   </joint>
   <link
     name="RL_thigh">
@@ -611,8 +611,8 @@
     <limit
       lower="-0.785"
       upper="0.785"
-      effort="0"
-      velocity="0" />
+      effort="6"
+      velocity="10.472" />
   </joint>
   <link
     name="RL_calf">
@@ -669,8 +669,8 @@
     <limit
       lower="-2.68"
       upper="-1.04"
-      effort="0"
-      velocity="0" />
+      effort="9"
+      velocity="6.981" />
   </joint>
   <link
     name="RL_foot">
@@ -780,8 +780,8 @@
     <limit
       lower="-0.26"
       upper="0.785"
-      effort="0"
-      velocity="0" />
+      effort="6"
+      velocity="10.472" />
   </joint>
   <link
     name="RR_thigh">
@@ -838,8 +838,8 @@
     <limit
       lower="-0.785"
       upper="0.785"
-      effort="0"
-      velocity="0" />
+      effort="6"
+      velocity="10.472" />
   </joint>
   <link
     name="RR_calf">
@@ -896,8 +896,8 @@
     <limit
       lower="-2.68"
       upper="-1.04"
-      effort="0"
-      velocity="0" />
+      effort="9"
+      velocity="6.981" />
   </joint>
   <link
     name="RR_foot">
