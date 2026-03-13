@@ -1,6 +1,6 @@
 import time
 import os
-import glob
+import argparse
 import numpy as np
 import mujoco
 import mujoco.viewer
@@ -8,6 +8,7 @@ import onnxruntime as ort
 import yaml
 from collections import deque
 from pynput import keyboard
+from onnx_path_utils import resolve_onnx_path
 
 # ================= 1. 路径配置 =================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -16,27 +17,20 @@ YAML_PATH = os.path.join(SCRIPT_DIR, "configs", "htdw_4438.yaml")
 XML_PATH = os.path.join(PROJECT_ROOT, "resources", "robots", "htdw_4438", "xml", "scene.xml")
 
 
-def resolve_onnx_path():
-    env_path = os.environ.get("HTDW_ONNX_PATH")
-    if env_path:
-        return os.path.abspath(os.path.expanduser(env_path))
-
-    default_path = os.path.join(
-        PROJECT_ROOT,
-        "onnx",
-        "flat_htdw_4438_20260312_103248_model_3400.onnx",
-    )
-    if os.path.exists(default_path):
-        return default_path
-
-    candidates = sorted(glob.glob(os.path.join(PROJECT_ROOT, "onnx", "*.onnx")))
-    if candidates:
-        return candidates[-1]
-
-    return default_path
+def parse_args():
+    parser = argparse.ArgumentParser(description="Deploy HTDW4438 policy in MuJoCo.")
+    parser.add_argument("--onnx", type=str, default=None, help="Absolute or relative path to ONNX policy.")
+    return parser.parse_args()
 
 
-ONNX_PATH = resolve_onnx_path()
+ARGS = parse_args()
+ONNX_PATH = resolve_onnx_path(
+    project_root=PROJECT_ROOT,
+    cli_onnx=ARGS.onnx,
+    env_vars=["HTDW_ONNX_PATH"],
+    onnx_glob="flat_htdw_4438*.onnx",
+    robot_name="htdw_4438",
+)
 
 # 打印路径信息，便于调试路径是否正确
 print(f"YAML: {YAML_PATH}")
